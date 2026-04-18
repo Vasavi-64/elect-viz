@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Elect-Viz Dashboard</title>
+</head>
+<body>
+
+<h1>Upload Dataset</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button type="submit">Upload</button>
+</form>
+
+<h2>Accuracy</h2>
+<p>{{ accuracy }} %</p>
+
+<h2>Sentiment Analysis</h2>
+<ul>
+{% for key, value in sentiment.items() %}
+    <li>{{ key }} : {{ value }}</li>
+{% endfor %}
+</ul>
+
+<h2>Charts</h2>
+{% for chart in charts %}
+    <iframe src="{{ url_for('static', filename=chart) }}" width="600" height="400"></iframe>
+{% endfor %}
+
+</body>
+</html>

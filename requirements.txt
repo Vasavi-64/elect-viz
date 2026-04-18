@@ -1,0 +1,6 @@
+flask
+pandas
+plotly
+textblob
+scikit-learn
+gunicorn
